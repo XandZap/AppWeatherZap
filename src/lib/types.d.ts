@@ -1,8 +1,7 @@
 export interface LocationType {
-  status: string;
   city: string;
-  lat: number;
-  lon: number;
+  longitude: number;
+  latitude: number;
 }
 
 export type IWeatherType = {

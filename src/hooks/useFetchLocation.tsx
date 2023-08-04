@@ -5,10 +5,13 @@ export function useFetchLocation() {
   const [data, setData] = useState<LocationType>();
 
   const handleFetch = async () => {
-    const res = await fetch("http://ip-api.com/json/?fields=status,city,lat,lon", { method: "GET" });
-    const response = await res.json();
-    if (response.status === "fail") handleFetch();
-    else setData(response);
+    const res = await fetch(
+      `https://ipgeolocation.abstractapi.com/v1/?api_key=${process.env.NEXT_PUBLIC_LOCATION_API_KEY}&fields=city,latitude,longitude`,
+      { method: "GET" }
+    );
+    const response: LocationType = await res.json();
+
+    setData(response);
   };
 
   useEffect(() => {

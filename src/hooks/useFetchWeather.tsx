@@ -16,9 +16,10 @@ export function useFetchWeather(
 
   const handleFetch = useCallback(
     async (location?: string) => {
+      if (q === undefined && location === undefined) return;
       try {
         const res = await fetch(
-          `${baseUrl}${location ? location : `${q?.lat},${q?.lon}`}&days=1&key=e2c30d874db049fb8f4175352230408`,
+          `${baseUrl}${location ? location : `${q?.latitude},${q?.longitude}`}&days=1&key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}`,
           {
             method: "GET",
             cache: "force-cache",
@@ -31,15 +32,15 @@ export function useFetchWeather(
 
         setData(response);
       } catch (e: any) {
-        if (!q?.lat) return;
+        if (!q?.latitude) return;
         return alert("Erro ao encontrar sua localização.");
       }
     },
-    [q?.lat, q?.lon]
+    [q]
   );
 
   useEffect(() => {
-    if ((q && q.lat && q.lon) || location) handleFetch();
+    handleFetch();
   }, [q, handleFetch]);
 
   return [data, refetch];
