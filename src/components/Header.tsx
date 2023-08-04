@@ -1,22 +1,13 @@
 import React from "react";
-import weatherIcon from "@/assets/images/weatherIcon.png";
+import weatherIcon from "@/assets/image/weatherIcon.png";
 import Image from "next/image";
-import { format } from "date-fns";
 import Navigation from "./Navigation";
 import Clock from "./Clock";
 
 const navigation = [
   {
-    href: "#",
-    name: "Today",
-  },
-  {
-    href: "#",
-    name: "Tomorrow",
-  },
-  {
-    href: "#",
-    name: "Contact",
+    href: "https://xandzapportfolio.vercel.app/",
+    name: "My Portfolio",
   },
 ];
 

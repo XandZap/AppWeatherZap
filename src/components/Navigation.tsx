@@ -13,7 +13,7 @@ function Navigation({ navigation }: props) {
 
   return (
     <>
-      <nav className="flex flex-row justify-between gap-x-8 text-xl mr-20 max-lg:hidden">
+      <nav className="flex flex-row justify-between gap-x-8 text-xl mr-20 max-lg:hidden hover:text-zinc-300">
         {navigation.map((nav) => (
           <Link href={nav.href} key={nav.name}>
             {nav.name}

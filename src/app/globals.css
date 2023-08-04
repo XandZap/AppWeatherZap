@@ -76,6 +76,24 @@ button {
     --ring: 240 3.7% 15.9%;
   }
 }
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+  margin-top: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #563c55;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #31a545;
+  border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1f672b;
+}
 
 @layer base {
   * {
@@ -85,3 +103,4 @@ button {
     @apply bg-background text-foreground;
   }
 }
+
